@@ -6,17 +6,19 @@ module.exports = function main() {
 
 class Sequence {
   constructor(input) {
-    this.len = input.length;
-    this.input = input;
+      this.len = input.length;
+      this.input = input;
   }
 
   minimum() {
-      var min=this.input[0];
-      for(var i=1;i<this.len;i++) {
-          if(this.input[i]<min)
-              min=this.input[i];
+    var min=this.input[0];
+    for(var i=1;i<this.len;i++) {
+        if(this.input[i]<min)
+        min=this.input[i];
+    }
+    return min;
   }
-      
+
   maxmu(){
     var max=this.input[0];
     for(var i=1;i<this.len;i++) {
@@ -25,7 +27,6 @@ class Sequence {
     }
     return max;
   }
-      
   average(){
 	  var av=0;
 	  for(var i=0;i<this.len;i++) {
