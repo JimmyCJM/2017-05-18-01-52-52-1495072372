@@ -1,7 +1,9 @@
 module.exports = function main() {
     let sequence = new Sequence([6, 9, 15, -2, 92, 11]);
-    console.log('o) 最小值 = '+sequence.minimum()+'\no) 最大值 = '+sequence.maxmu()+
-	'\no) 元素数量 = '+sequence.len+'\no) 平均值 = '+sequence.average());
+    console.log('o) 最小值 = '+sequence.minimum());
+    console.log('o) 最大值 = '+sequence.maxmu());
+    console.log('o) 元素个数 = '+sequence.len)；
+    console.log('o) 平均值 = '+sequence.average());
 };
 
 class Sequence {
@@ -11,27 +13,30 @@ class Sequence {
   }
 
   minimum() {
-    var min=this.input[0];
-    for(var i=1;i<this.len;i++) {
-        if(this.input[i]<min)
-        min=this.input[i];
+    var min=0;
+    for(var i=1;i<this.len-1;i++) {
+        if(this.input[i-1]<this.input[i])
+        min=this.input[i-1];
+	else min=this.input[i];		    
     }
     return min;
   }
 
   maxmu(){
-    var max=this.input[0];
-    for(var i=1;i<this.len;i++) {
-        if(this.input[i]>max)
-        max=this.input[i];
+    var max=0;
+    for(var i=0;i<this.len-1;i++) {
+        if(this.input[i-1]>this.input[i])
+        max=this.input[i-1];
+	else max=this.input[i];
     }
     return max;
   }
   average(){
-	  var av=0;
-	  for(var i=0;i<this.len;i++) {
-        av=av+this.input[i];
+    var sum=0,aver=0;
+    for(var i=0;i<this.len;i++) {
+        sum=sum+this.input[i];
     }
-    return (av/this.len).toFixed(2);
+    aver = sum/this.len;
+    return aver.toFixed(2);
   }
 }
