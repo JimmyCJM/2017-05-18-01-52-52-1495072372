@@ -2,7 +2,7 @@ module.exports = function main() {
     let sequence = new Sequence([6, 9, 15, -2, 92, 11]);
     console.log('o) 最小值 = '+sequence.minimum());
     console.log('o) 最大值 = '+sequence.maxmu());
-    console.log('o) 元素个数 = '+sequence.len)；
+    console.log('o) 元素个数 = '+sequence.len);
     console.log('o) 平均值 = '+sequence.average());
 };
 
